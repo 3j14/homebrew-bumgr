@@ -47,7 +47,7 @@ class Bumgr < Formula
     resource("fixture.toml").stage do
       assert_match(
         "RESTIC_REPOSITORY=\"test\" RESTIC_PASSWORD_COMMAND=\"echo 'foo'\" foo=\"bar\"",
-        shell_output("#{bin}/bumgr -c fixture.toml env test")
+        shell_output("#{bin}/bumgr -c fixture.toml env test"),
       )
     end
   end
