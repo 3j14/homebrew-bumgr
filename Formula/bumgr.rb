@@ -45,7 +45,10 @@ class Bumgr < Formula
       sha256 "ea7411ba30c7df80197920a942a1575216dd9fb35fd797264c5383b769a498a6"
     end
     resource("fixture.toml").stage do
-      assert_match "RESTIC_REPOSITORY=\"test\" RESTIC_PASSWORD_COMMAND=\"echo 'foo'\" foo=\"bar\"", shell_output("#{bin}/bumgr -c fixture.toml env test")
+      assert_match(
+        "RESTIC_REPOSITORY=\"test\" RESTIC_PASSWORD_COMMAND=\"echo 'foo'\" foo=\"bar\"",
+        shell_output("#{bin}/bumgr -c fixture.toml env test")
+      )
     end
   end
 end
