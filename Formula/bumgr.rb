@@ -1,10 +1,15 @@
 class Bumgr < Formula
   include Language::Python::Virtualenv
 
-  desc "Shiny new formula"
-  homepage "None"
+  desc "Manage Backups with restic using a simple configuration file"
+  homepage "https://github.com/3j14/bumgr"
   url "https://files.pythonhosted.org/packages/4c/0c/c9be7b8e367542ea075f6a4cb10d0eb3bf3540a0f3c4a1ebb82acc9ecbb6/bumgr-0.3.0.tar.gz"
   sha256 "0a266cdc1845cca146b3deb25f60f9df7b307ce3befa9543a1410173680dd00e"
+  license "BSD-3-Clause"
+
+  livecheck do
+    url :stable
+  end
 
   depends_on "python3"
   depends_on "restic"
