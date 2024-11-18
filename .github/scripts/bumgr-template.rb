@@ -13,13 +13,13 @@ class Bumgr < Formula
 
   depends_on "python@3.13"
   depends_on "restic"
-  {% for resource in resources %}
+{% for resource in resources %}
 
   resource "{{ resource.name }}" do
     url "{{ resource.url }}"
     {{ resource.checksum_type }} "{{ resource.checksum }}"
   end
-  {% endfor %}
+{% endfor %}
 
   def install
     virtualenv_create(libexec, "python3")
