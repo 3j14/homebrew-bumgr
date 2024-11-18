@@ -17,7 +17,6 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
-        cache: pip
         python-version: "3.13"
     - name: Install bumgr and homebrew-pypi-poet
       run: 'pip install bumgr=${{ github.event.client_payload.version }} homebrew-pypi-poet'

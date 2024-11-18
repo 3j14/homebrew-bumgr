@@ -22,17 +22,8 @@ class Bumgr < Formula
   {% endfor %}
 
   def install
-    inreplace "etc/de.3j14.bumgr.plist" do |s|
-      s.gsub! "/path/to/logfile", var/"log/bumgr.log"
-      s.gsub! "/path/to/bumgr", bin/"bumgr"
-    end
-
     virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
-  end
-
-  service do
-    name macos: "de.3j14.bumgr"
   end
 
   test do
