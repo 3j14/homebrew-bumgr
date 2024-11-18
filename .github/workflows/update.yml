@@ -6,6 +6,10 @@ on:
     # Required payload ('client_payload'): 'version'
     types: [update]
 
+
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
