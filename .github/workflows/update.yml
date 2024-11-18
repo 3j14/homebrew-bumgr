@@ -1,0 +1,30 @@
+name: Update bumgr Homebrew Formula
+
+on:
+  repository_dispatch:
+    # Trigger on repository dispatch event with the 'event_type' set to 'update'
+    # Required payload ('client_payload'): 'version'
+    types: [update]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        cache: pip
+        python-version: "3.13"
+    - name: Install bumgr and homebrew-pypi-poet
+      run: 'pip install bumgr=${{ github.event.client_payload.version }} homebrew-pypi-poet'
+    - name: Generate updated formula
+      run: 'python3 .github/scripts/auto-poet.py > Formula/bumgr.rb'
+    - name: Commit and push the update
+      continue-on-error: true
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add Formula/bumgr.rb
+        git commit -m "Update: Bump bumgr to version ${{ github.event.client_payload.version }}"
+        git push origin main
+

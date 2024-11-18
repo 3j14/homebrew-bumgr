@@ -3,15 +3,15 @@ class Bumgr < Formula
 
   desc "Manage Backups with restic using a simple configuration file"
   homepage "https://github.com/3j14/bumgr"
-  url "https://files.pythonhosted.org/packages/4c/0c/c9be7b8e367542ea075f6a4cb10d0eb3bf3540a0f3c4a1ebb82acc9ecbb6/bumgr-0.3.0.tar.gz"
-  sha256 "0a266cdc1845cca146b3deb25f60f9df7b307ce3befa9543a1410173680dd00e"
+  url "https://files.pythonhosted.org/packages/a6/18/f08b677447352700000ff24999c9b74f46c2da7baee0d554152690178c2a/bumgr-0.4.1.tar.gz"
+  sha256 "141bd5e323bb59c27a2cc74fed683dc4e04c0815f6ce9fe4cdd1e67f1963f958"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
   end
 
-  depends_on "python3"
+  depends_on "python@3.13"
   depends_on "restic"
 
   resource "markdown-it-py" do
@@ -35,10 +35,19 @@ class Bumgr < Formula
   end
 
   def install
+    # inreplace "etc/de.3j14.bumgr.plist" do |s|
+    #   s.gsub! "/path/to/logfile", var/"log/bumgr.log"
+    #   s.gsub! "/path/to/bumgr", bin/"bumgr"
+    # end
+    #
     virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
   end
 
+  # service do
+  #   name macos: "de.3j14.bumgr"
+  # end
+  #
   test do
     resource "fixture.toml" do
       url "https://raw.githubusercontent.com/3j14/bumgr/refs/heads/main/tests/fixture.toml"
