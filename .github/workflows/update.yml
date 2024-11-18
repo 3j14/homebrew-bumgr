@@ -19,7 +19,7 @@ jobs:
       with:
         python-version: "3.13"
     - name: Install bumgr and homebrew-pypi-poet
-      run: 'pip install bumgr=${{ github.event.client_payload.version }} homebrew-pypi-poet'
+      run: 'pip install bumgr==${{ github.event.client_payload.version }} homebrew-pypi-poet'
     - name: Generate updated formula
       run: 'python3 .github/scripts/auto-poet.py > Formula/bumgr.rb'
     - name: Commit and push the update
