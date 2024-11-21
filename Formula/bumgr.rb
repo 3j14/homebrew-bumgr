@@ -3,8 +3,8 @@ class Bumgr < Formula
 
   desc "Manage Backups with restic using a simple configuration file"
   homepage "https://github.com/3j14/bumgr"
-  url "https://files.pythonhosted.org/packages/2d/f6/006db2e2a7b5ed49e2dbe78cc978f67cc670e1a80be465ccfe7312565cea/bumgr-0.4.2.tar.gz"
-  sha256 "5abd8f87b63b8e280a8241cda6954b97accc3441a7eddf73a7225ddceec359c4"
+  url "https://files.pythonhosted.org/packages/94/6e/324c9a8ebc8d6d9a504e861fb14cc8b10193adc94b0884102c80570c3044/bumgr-0.5.0.tar.gz"
+  sha256 "9ec9e771043fac00bf50a63396c23459adc25f744ec7524ff72397a49e5d7972"
   license "BSD-3-Clause"
 
   livecheck do
