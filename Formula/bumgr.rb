@@ -3,8 +3,8 @@ class Bumgr < Formula
 
   desc "Manage Backups with restic using a simple configuration file"
   homepage "https://github.com/3j14/bumgr"
-  url "https://files.pythonhosted.org/packages/94/6e/324c9a8ebc8d6d9a504e861fb14cc8b10193adc94b0884102c80570c3044/bumgr-0.5.0.tar.gz"
-  sha256 "9ec9e771043fac00bf50a63396c23459adc25f744ec7524ff72397a49e5d7972"
+  url "https://files.pythonhosted.org/packages/9b/8d/b2152aa1e809ef7b39730479a8182812b56ea822392781053b18cc8ac011/bumgr-0.5.1.tar.gz"
+  sha256 "28c1738516f186dca7a0e520c82030f1fb8609c7b7d55283e63409b18619a96a"
   license "BSD-3-Clause"
 
   livecheck do
@@ -25,8 +25,8 @@ class Bumgr < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "rich" do
